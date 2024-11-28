@@ -22,15 +22,14 @@ def add_fuzzy_numbers(mu1, mu2):
     return np.minimum(mu1, mu2)
 
 
-try:
-    m1 = float(input("Введіть значення m: "))
-    m2 = float(input("Введіть значення -m: "))
-except ValueError:
-    print("Будь ласка, введіть числові значення!")
-    exit()
-
-
 if __name__ == '__main__':
+    try:
+        m1 = float(input("Введіть значення m: "))
+        m2 = float(input("Введіть значення -m: "))
+    except ValueError:
+        print("Будь ласка, введіть числові значення!")
+        exit()
+
     x = np.linspace(-max(m1, m2) - 10, max(m1, m2) + 10, 500)
 
     mu_m1 = fuzzy_number_m(x, m1)
