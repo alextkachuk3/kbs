@@ -22,12 +22,12 @@ def add_fuzzy_numbers(mu1, mu2):
     return np.minimum(mu1, mu2)
 
 
-if __name__ == '__main__':
+def main():
     try:
         m1 = float(input("Введіть значення m: "))
         m2 = float(input("Введіть значення -m: "))
     except ValueError:
-        print("Будь ласка, введіть числові значення!")
+        print("Введені значення мають бути числами!")
         exit()
 
     x = np.linspace(-max(m1, m2) - 10, max(m1, m2) + 10, 500)
@@ -39,7 +39,7 @@ if __name__ == '__main__':
     plt.figure(figsize=(10, 6))
     plt.plot(x, mu_m1, label=f"Нечітке число m ({m1})", color="blue")
     plt.plot(x, mu_m2, label=f"Нечітке число -m ({m2})", color="green")
-    plt.plot(x, mu_sum, label="Сума нечіткіх чисел", color="red", linestyle="--")
+    plt.plot(x, mu_sum, label="Сума", color="red", linestyle="--")
 
     plt.title("Додавання нечітких чисел")
     plt.xlabel("x")
@@ -47,3 +47,7 @@ if __name__ == '__main__':
     plt.legend()
     plt.grid()
     plt.show()
+
+
+if __name__ == '__main__':
+    main()
